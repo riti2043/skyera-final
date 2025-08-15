@@ -97,7 +97,7 @@ const WeatherColumn = () => {
                     >
                         <h2 className={styles.cityName}>{weatherData.location.name}, {weatherData.location.country}</h2>
                         <div className={styles.dashboardGrid}>
-                            <CurrentWeather data={weatherData.current} astro={weatherData.forecast.forecastday[0].astro} />
+                            <CurrentWeather data={weatherData.current} astro={weatherData.forecast.forecastday[0].astro} location={weatherData.location} />
                             <HourlyForecast data={weatherData.forecast.forecastday[0].hour} currentTime={weatherData.location.localtime_epoch} />
                             <DailyForecast data={weatherData.forecast.forecastday} />
                             <AirQuality data={weatherData.current.air_quality} />

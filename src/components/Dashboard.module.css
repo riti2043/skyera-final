@@ -87,6 +87,13 @@
     align-items: center;
     gap: 2rem;
 }
+.localTime {
+    grid-column: 1 / -1; /* Make it span the full width */
+    text-align: center;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
 .mainTemp { font-size: clamp(4rem, 10vw, 6rem); font-weight: 800; line-height: 1; text-align: right; }
 .mainIconContainer { text-align: center; }
 .mainDescription { text-transform: capitalize; margin-top: 0.5rem; }
