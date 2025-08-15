@@ -1,132 +1,41 @@
-.weatherColumn {
-    padding: 2rem;
-    overflow-y: auto;
-    height: 100vh;
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: #121212;
 }
 
-.searchForm {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-    position: sticky;
-    top: 2rem;
-    z-index: 10;
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-.searchInput {
-    flex-grow: 1;
-    border: none;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 1rem;
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-}
-.searchInput:focus {
-    border-color: rgba(255, 255, 255, 0.6);
+.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    filter: brightness(0.7);
 }
 
-.searchButton {
-    border: none;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 1rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: background 0.3s ease;
-}
-.searchButton:hover { background: rgba(255, 255, 255, 0.2); }
-
-.message {
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.cityName {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
-    margin-bottom: 2rem;
-    text-align: left;
-}
-
-.dashboardGrid {
+.main-layout {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 3fr 7fr; /* 30% and 70% width */
+    min-height: 100vh;
 }
 
-.card {
-    background: rgba(28, 28, 40, 0.6);
-    border-radius: 15px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.cardTitle {
-    margin: 0 0 1.5rem 0;
-    font-size: 1rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-/* --- RESTORED STYLES START HERE --- */
-.currentWeatherCard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 2rem;
-}
-.mainTemp { font-size: clamp(4rem, 10vw, 6rem); font-weight: 800; line-height: 1; text-align: right; }
-.mainIconContainer { text-align: center; }
-.mainDescription { text-transform: capitalize; margin-top: 0.5rem; }
-.detailsGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; grid-column: 1 / -1; }
-.detailItem { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
-.detailItem svg { font-size: 1.8rem; }
-/* --- RESTORED STYLES END HERE --- */
-
-
-/* --- NEW HOURLY FORECAST STYLES --- */
-.hourlyGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
-.hourItem { 
-    text-align: center; 
-    font-size: 0.9rem;
-}
-.hourTemp { 
-    font-weight: 600; 
-    margin-top: 0.5rem; 
-}
-/* --- NEW HOURLY FORECAST STYLES END --- */
-
-
-.dailyList { display: flex; flex-direction: column; gap: 1rem; }
-.dayItem { display: grid; grid-template-columns: 2fr 1fr 1fr; align-items: center; text-align: center; }
-.dayName { text-align: left; font-weight: 600; }
-.dayTemps { text-align: right; font-size: 0.9rem; }
-.dayTemps span:last-child { color: rgba(255, 255, 255, 0.6); }
-
-.aqiCard { text-align: center; }
-.aqiLabel { font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0; }
-.aqiValue { font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .weatherColumn { padding: 1rem; }
-    .searchForm { top: 1rem; }
-    .currentWeatherCard { grid-template-columns: 1fr; }
-    .mainTemp { text-align: center; }
+/* Responsive layout for smaller screens */
+@media (max-width: 1024px) {
+    .main-layout {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
 }
