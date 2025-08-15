@@ -1,9 +1,9 @@
 /* Hourly Forecast Card */
-.hourlyGrid { /* Renamed from .hourlyScroller */
+.hourlyGrid {
     display: grid;
-    /* This creates a responsive grid that wraps */
-    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
-    gap: 1.5rem;
+    /* This creates a simple, responsive 4-column grid */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem; /* Reduced the gap slightly for a better fit */
 }
 .hourItem { 
     text-align: center; 
