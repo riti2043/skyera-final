@@ -1,0 +1,41 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: #121212;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 3fr 7fr; /* 30% and 70% width */
+    min-height: 100vh;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 1024px) {
+    .main-layout {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+}
