@@ -7,7 +7,8 @@ function App() {
     return (
         <>
             <video autoPlay loop muted playsInline className="background-video">
-                <source src="/clouds.mp4" type="video/mp4" />
+                {/* This is the corrected line */}
+                <source src="clouds.mp4" type="video/mp4" />
             </video>
             <div className="main-layout">
                 <TitleColumn />
